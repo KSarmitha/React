@@ -1,0 +1,19 @@
+1) What is Emmet?
+
+2) Differnece between a Library and Framework?
+    
+
+3) What is CDN? why do we use it?
+    CDN is Content Deleivery Network. It helps to host sites on the network. when user tries to access the url it will get from the nearest network
+
+4) Why React known as React?
+
+5) What is crossorigin in script tag?
+    helps to request resource from another domain
+
+6) What is difference between React and ReactDOM?
+    React has its base packages to access React in any browser. ReactDOM helps to manupilate the DOM
+
+7) What is difference between react.development.js and react.production.js files via CDN?
+
+8) What is async and defer?
