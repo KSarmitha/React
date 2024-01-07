@@ -1,19 +1,29 @@
 1) What is Emmet?
+    Its a plugin that allows user to write HTML and CSS code using abbrevations. wriiten in pure JS.
 
 2) Differnece between a Library and Framework?
-    
+    Both are set of pre-wriitrn code .library used to perform a specific task. Framework provides a structure for developing software aplications
 
 3) What is CDN? why do we use it?
-    CDN is Content Deleivery Network. It helps to host sites on the network. when user tries to access the url it will get from the nearest network
+    CDN is Content Deleivery Network. CDN improves the web performance and availabilty by placing copy of web content closer to the end-user. reduce the latency, or reduce the delay in communication created by a network's design 
 
 4) Why React known as React?
+    It 'reacts' quickly to changes without reloading the whole web page. use virtual DOM to efficiently update parts of webpage. build aroung components that 'react' and update
 
 5) What is crossorigin in script tag?
     helps to request resource from another domain
 
 6) What is difference between React and ReactDOM?
-    React has its base packages to access React in any browser. ReactDOM helps to manupilate the DOM
+    React library is responsible for creating views/user interfaces. ReactDOM responsible to render UI in rower. until React 
+    V0.14 ReactDOM was shipped inside React package. ReactDOM binds the idea of React to a web browser. React-native, react-canve, react-three are not using ReactDOM. they has nothing to do with browser or the DOM.  
 
 7) What is difference between react.development.js and react.production.js files via CDN?
+    development link has debug tools, warnings and helpful error messages. not optimized for production use.
+    production link excludes these features with reduced file size and minified and optimized for production use.
 
 8) What is async and defer?
+    In general, when HTML code is parsed, encountering a script tag without attributes causes the browser to pause HTML parsing, fetch the script, and execute it before resuming parsing.
+
+    Using the async attribute within a script tag allows HTML parsing to continue while the script is fetched in parallel. Once fetched, parsing pauses for script execution, then resumes. Best use for non-critical scripts that don't rely on DOM readiness or other scripts (e.g.,google analytics, tracking).
+
+    The defer attribute also allows parallel fetching, but script execution occurs only after HTML parsing is complete, ensuring scripts run in their order within the document.Best for scripts that depend on the DOM being fully parsed or on other scripts (e.g., custom JavaScript libraries).
