@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 // using JS
 const rootElement = document.getElementById('root');
 const heading = document.createElement('h1');
