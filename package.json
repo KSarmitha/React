@@ -2,9 +2,10 @@
   "name": "react",
   "version": "1.0.0",
   "description": "learn react from begining",
-  "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,14 @@
   },
   "homepage": "https://github.com/KSarmitha/React#readme",
   "devDependencies": {
-    "parcel": "^2.12.0"
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "browserlists": [
+    "last 5 versions"
+  ]
 }
