@@ -1,3 +1,35 @@
-#heading{
-    color: blue;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: 50px;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.header {
+  background-color: #212121;
+  color: #ffffff;
+  height: 60px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.profile {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }

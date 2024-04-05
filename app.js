@@ -1,23 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 // React element
-const Title = (
-    <div>
-        <h1>Hello, JSX🚀</h1>
-        <h3>Title</h3>
-    </div>
+const logo = (
+  <img
+    className="logo"
+    src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    alt="Google Logo"
+  />
 );
 
 // React component - functional component
-const HeadingComponent = () => 
-(
+const HeadingComponent = () => (
+  <div className="header">
+    <div>{logo}</div>
     <div>
-        <h1>{Title}</h1>
-        <h2>Functional Component</h2>
+      <input type="text" placeholder="Search" />
     </div>
-
+    <div>
+      <img
+        className="profile"
+        src="https://www.w3schools.com/howto/img_avatar.png"
+        alt="Profile"
+      />
+    </div>
+  </div>
 );
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<HeadingComponent />);
