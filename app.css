@@ -4,14 +4,15 @@ body {
 }
 
 .logo {
-  height: 50px;
+  height: 60px;
   width: 100%;
   vertical-align: middle;
+  border-radius: 50%;
 }
 
 .header {
-  background-color: #212121;
-  color: #ffffff;
+  background-color: rgb(219, 142, 11);
+  color: #212121;
   height: 60px;
   padding: 8px;
   display: flex;
@@ -28,8 +29,68 @@ input[type="text"] {
   border-radius: 8px;
 }
 
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.nav-item {
+  margin-right: 20px;
+  font-size: medium;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
 .profile {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  background-color: rgb(219, 142, 11);
+}
+
+.container {
+  min-height: 80vh;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  display: flex;
+}
+
+.card {
+  height: 250px;
+  width: 335px;
+  padding: 5px;
+  border: 2px dashed rgb(84, 84, 84);
+  border-radius: 8px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 2px solid rgb(219, 142, 11);
+}
+
+.card-img {
+  width: 100%;
+  height: 75%;
+  border-radius: 8px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(219, 142, 11);
+  color: #ffffff;
+  height: 50px;
 }
