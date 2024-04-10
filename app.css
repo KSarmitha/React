@@ -58,6 +58,7 @@ input[type="text"] {
   margin: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-container {
@@ -93,4 +94,13 @@ input[type="text"] {
   background-color: rgb(219, 142, 11);
   color: #ffffff;
   height: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: rgb(219, 142, 11);
+  color: #ffffff;
+  cursor: pointer;
+  margin: 5px;
 }
