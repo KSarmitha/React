@@ -25,11 +25,8 @@ const Content = () => {
     }
   }
 
-  if (countryList.length === 0) {
-    return (<ContentLoader />)
-  }
-
-    return (
+  // Conditional Rendering
+      return countryList.length === 0 ? <ContentLoader /> : (
         <div style={{display: 'flex', flexDirection: 'column', alignItems:'center'}}>
           <button onClick = {
             () => {
