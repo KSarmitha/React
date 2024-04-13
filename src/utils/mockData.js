@@ -81,4 +81,6 @@ const data = [
     },
   ];
 
+  // can be deleted
+
   export default data;
