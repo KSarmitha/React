@@ -25,6 +25,10 @@ const Content = () => {
     }
   }
 
+  if (countryList.length === 0) {
+    return (<ContentLoader />)
+  }
+
     return (
         <div style={{display: 'flex', flexDirection: 'column', alignItems:'center'}}>
           <button onClick = {
@@ -42,11 +46,9 @@ const Content = () => {
 
           <div className="container">
             {
-              countryList.length > 0 ? 
               countryList.map((country) => (
                 <CountryCard key={country?.tld[0]} data={country} />
-              )) :
-              <ContentLoader />
+              ))
             }
           </div>
       </div>
