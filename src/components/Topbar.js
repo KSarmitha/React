@@ -11,9 +11,6 @@ const logo = (
 const TopbarComponent = () => (
     <div className="header">
       <div>{logo}</div>
-      <div>
-        <input type="text" placeholder="Search" />
-      </div>
       <div style={{ display: "flex" }}>
         <ul className="nav-list">
           <li className="nav-item">Home</li>
