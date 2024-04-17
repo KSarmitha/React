@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ContentComponent from "./components/Content";
@@ -11,7 +11,7 @@ import TopbarComponent from "./components/Topbar";
 const AppLayoutComponent = () => (
   <div style={{ backgroundColor: "#212121", color: "#fff" }}>
     <TopbarComponent />
-    <ContentComponent/>
+    <Outlet />
     <FooterComponent />
   </div>
 );
@@ -21,17 +21,22 @@ const appRouter = createBrowserRouter(
     {
       path: "/",
       element: <AppLayoutComponent />,
+      children: [
+        {
+          path: "/",
+          element: <ContentComponent/>
+        },
+        {
+          path: "/about",
+          element: <About />
+        },
+        {
+          path: "/contact",
+          element: <Contact />
+        }
+      ],
       errorElement: <NotFound />
-    },
-    {
-      path: "/about",
-      element: <About />
-    },
-    {
-      path: "/contact",
-      element: <Contact />
     }
-
   ]
 );
 
