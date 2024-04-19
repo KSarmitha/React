@@ -1,6 +1,9 @@
-const ContentLoader = () => {
+const CardLoader = () => {
     return (
-        <div className="loaderContainer">
+        <div className="loader-container">
+            <div className="loader"></div>
+            <div className="loader"></div>
+            <div className="loader"></div>
             <div className="loader"></div>
             <div className="loader"></div>
             <div className="loader"></div>
@@ -13,4 +16,4 @@ const ContentLoader = () => {
     )
 }
 
-export default ContentLoader;
+export default CardLoader;

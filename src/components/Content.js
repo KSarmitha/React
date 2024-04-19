@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import { countryUrl, unplashAccesskey, unplashAvatarUrl } from '../utils/constants';
+import CardLoader from './CardLoader';
 import CountryCard from './CountryCard';
-import ContentLoader from './loadingContent';
 
 const Content = () => {
   const [countryList, setCountryList] = useState([]);
@@ -29,7 +30,7 @@ const Content = () => {
   }
 
   // Conditional Rendering
-  return countryList.length === 0 ? <ContentLoader /> : (
+  return countryList.length === 0 ? <CardLoader /> : (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div style={{ display: 'flex' }}>
         <input type="text" placeholder="Search by country name.." value={searchText} onChange={(e) => setSearchText(e.target.value)} />
@@ -60,7 +61,9 @@ const Content = () => {
       <div className="container">
         {
           filteredCountryList.map((country) => (
-            <CountryCard key={country?.tld[0]} data={country} />
+            <Link key={country?.tld[0]} to={"/country/"+ country?.name?.common}>
+              <CountryCard data={country} />
+            </Link>
           ))
         }
       </div>

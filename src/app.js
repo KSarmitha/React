@@ -4,6 +4,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ContentComponent from "./components/Content";
+import CountryDetails from "./components/CountryDetails";
 import FooterComponent from "./components/Footer";
 import NotFound from "./components/NotFound";
 import TopbarComponent from "./components/Topbar";
@@ -33,6 +34,10 @@ const appRouter = createBrowserRouter(
         {
           path: "/contact",
           element: <Contact />
+        },
+        {
+          path: "/country/:countryName",
+          element: <CountryDetails/>
         }
       ],
       errorElement: <NotFound />
