@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { LOGO_URL, PROFILE_URL } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const logo = <img className="logo" src={LOGO_URL} alt="Google Logo" />;
 
 const TopbarComponent = () => {
   const [loginBtnName, setLoginBtnName] = useState("Login");
+  const  onlineStatus  = useOnlineStatus();
 
   return (
     <div className="header">
@@ -27,7 +29,10 @@ const TopbarComponent = () => {
             {loginBtnName}
           </button>
         </ul>
+        <div className="avatar-container">
         <img className="profile" src={PROFILE_URL} alt="Profile" />
+        <span className={`status ${onlineStatus ? 'online' : 'offline'}`}></span>
+        </div>
       </div>
     </div>
   );

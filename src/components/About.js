@@ -25,6 +25,10 @@ class About extends Component {
     //called after component is rendered
   }
 
+  componentDidUpdate() {
+    //called after component is updated
+  }
+
   componentWillUnmount() {
     //called after componend is removed from the DOM
   }
@@ -90,7 +94,14 @@ class About extends Component {
 
 export default About;
 
+// --Mounting--
 // constructor called
 // render called
 // componentDidMount called
 // componentWillUnmount called
+
+// --Updating--
+// render called
+// componentDidUpdate called
+// if any state or props change, render is called again
+

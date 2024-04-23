@@ -191,3 +191,30 @@ h2 {
 p {
   line-height: 1.5;
 }
+
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.avatar-container img {
+ border: 3px solid #ffffff;
+  border-radius: 50%; /* Round avatar image */
+}
+
+.status.online {
+  background-color: green;
+}
+
+.status.offline {
+  background-color: rgb(246, 47, 7);
+}
