@@ -16,6 +16,7 @@ const TopbarComponent = () => {
         style={{ display: "flex", alignItems: "center", flexDirection: "row" }}
       >
         <ul className="nav-list">
+          <li className="nav-item"><Link to="/hotels"> Hotels Reservation </Link></li>
           <li className="nav-item"><Link to="/"> Home </Link></li>
           <li className="nav-item"><Link to="/about"> About Us </Link></li>
           <li className="nav-item"><Link to="/contact"> Contact </Link></li>

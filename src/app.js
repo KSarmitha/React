@@ -1,6 +1,6 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ContentComponent from "./components/Content";
@@ -16,6 +16,8 @@ const AppLayoutComponent = () => (
     <FooterComponent />
   </div>
 );
+
+const Hotels = lazy(() => import("./components/HotelReservation"));
 
 const appRouter = createBrowserRouter(
   [
@@ -34,6 +36,10 @@ const appRouter = createBrowserRouter(
         {
           path: "/contact",
           element: <Contact />
+        },
+        {
+          path: "/hotels",
+          element: <Suspense fallback = {<>Loading...</>}> <Hotels /> </Suspense>
         },
         {
           path: "/country/:countryName",
