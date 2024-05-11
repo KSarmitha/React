@@ -1,26 +1,10 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { countryDetailsUrl } from '../utils/constants';
+import useCountryDetails from '../utils/useCountryDetails';
 import CountryLoader from './CountryLoader';
 
 const CountryDetails = () => {
     const { countryName } = useParams();
-    const [countryDetails, setCountryeDetails] = useState(null);
-
-    useEffect(() => {
-        getCountryDetails();
-    }, []);
-
-    const getCountryDetails = async () => {
-        try {
-            const data = await fetch(countryDetailsUrl + countryName);
-            const jsonData = await data.json();
-            setCountryeDetails(jsonData[0]);
-        }
-        catch (error) {
-            console.error(error);
-        }
-    }
+    const countryDetails = useCountryDetails(countryName);
 
     if (countryDetails === null)
         return <CountryLoader />;
