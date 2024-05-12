@@ -10,7 +10,7 @@ import NotFound from "./components/NotFound";
 import TopbarComponent from "./components/Topbar";
 
 const AppLayoutComponent = () => (
-  <div style={{ backgroundColor: "#212121", color: "#fff" }}>
+  <div className="text-white" style={{ backgroundColor: "#212121"}}>
     <TopbarComponent />
     <Outlet />
     <FooterComponent />

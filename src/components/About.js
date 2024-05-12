@@ -36,7 +36,7 @@ class About extends Component {
   render() {
     //called when component is rendered after constructor
     return (
-      <div style={{ padding: "20px" }}>
+      <div className="p-5">
         <h2>About Travello </h2>
         <p>
           Travel App is your one-stop shop for planning your dream vacation. We

@@ -31,10 +31,11 @@ const Content = () => {
 
   // Conditional Rendering
   return countryList.length === 0 ? <CardLoader /> : (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <div style={{ display: 'flex' }}>
-        <input type="text" placeholder="Search by country name.." value={searchText} onChange={(e) => setSearchText(e.target.value)} />
-        <button onClick={
+    <div className="flex flex-col items-center mt-3">
+      <div className="flex">
+        <input className="border border-black rounded-md mr-2 p-2 text-sm text-black" type="text" placeholder="Search by country name.." value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+        <button className="rounded-md border border-orange-950 p-1 bg-orange-800 text-white w-24"
+         onClick={
           () => {
             const filteredCountry = countryList.filter((country) =>
               country?.name?.common.toLowerCase().includes(searchText.toLowerCase()));
@@ -42,7 +43,8 @@ const Content = () => {
           }}>Search</button>
       </div>
       
-      <button onClick={
+      <button className="rounded-md border border-orange-950 p-1 bg-orange-700 text-white w-auto my-2"
+      onClick={
         () => {
           const filteredCountry = countryList.filter((country) => country.region == 'Asia');
           setFilteredCountryList(filteredCountry);
@@ -51,14 +53,15 @@ const Content = () => {
         Filter by Asia Region Country
       </button>
 
-      <button onClick={() => {
+      <button className="rounded-md border border-orange-950 p-1 bg-orange-400 text-white w-24"
+      onClick={() => {
         setFilteredCountryList(countryList);
         setSearchText('');
       }}>
         Reset
       </button>
 
-      <div className="container">
+      <div className="flex flex-wrap p-5 items-center justify-center">
         {
           filteredCountryList.map((country) => (
             <Link key={country?.tld[0]} to={"/country/"+ country?.name?.common}>

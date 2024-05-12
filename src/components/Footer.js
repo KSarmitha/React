@@ -1,6 +1,6 @@
 const FooterComponent = () => (
     <div>
-      <div className="footer">Copy Rights Reserved @ {new Date().getFullYear()}</div>
+      <div className="h-10 text-white flex items-center justify-center bg-orange-400">Copy Rights Reserved @ {new Date().getFullYear()}</div>
     </div>
   );
 

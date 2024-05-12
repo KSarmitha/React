@@ -12,9 +12,9 @@ const CountryDetails = () => {
     const { name, capital, altSpellings , continents, flags, population, subregion} = countryDetails;
 
     return (
-        <div className='center-content'>
+        <div className='flex items-center justify-center flex-col my-5'>
             <img src={flags.png} alt={flags.alt} />
-            <h2>{name?.common}</h2>
+            <h2 className='text-lg mt-2'>{name?.common}</h2>
             <p>Capital: {capital.join(', ')}</p>
             <p>Alternate Spellings: {altSpellings.join(', ')}</p>
             <p>Continents: {continents.join(', ')}</p>

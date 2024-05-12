@@ -1,20 +1,13 @@
 const CountryLoader = () => {
-    const styleObj = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        marginTop: '20px'
-    }
     return (
         <div style={styleObj}>
-            <div className="bar-loader"></div>
-            <div className="bar-loader"></div>
-            <div className="bar-loader"></div>
-            <div className="bar-loader"></div>
-            <div className="bar-loader"></div>
-            <div className="bar-loader"></div>
-            <div className="bar-loader"></div>
+            <div className="h-10 w-96 rounded-md animate-pulse bg-gray-400 mb-2"></div>
+            <div className="h-10 w-96 rounded-md animate-pulse bg-gray-400 mb-2"></div>
+            <div className="h-10 w-96 rounded-md animate-pulse bg-gray-400 mb-2"></div>
+            <div className="h-10 w-96 rounded-md animate-pulse bg-gray-400 mb-2"></div>
+            <div className="h-10 w-96 rounded-md animate-pulse bg-gray-400 mb-2"></div>
+            <div className="h-10 w-96 rounded-md animate-pulse bg-gray-400 mb-2"></div>
+            <div className="h-10 w-96 rounded-md animate-pulse bg-gray-400 mb-2"></div>
         </div>
     )
 }
