@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { countryUrl, unplashAccesskey, unplashAvatarUrl } from '../utils/constants';
 import CardLoader from './CardLoader';
-import CountryCard from './CountryCard';
+import ContentComponent from './CountryCard';
+import IndependentCountryCard from './IndependentCountryCard';
 
 const Content = () => {
   const [countryList, setCountryList] = useState([]);
   const [filteredCountryList, setFilteredCountryList] = useState([]);
   const [searchText, setSearchText] = useState('');
+  const IndependentComponent = IndependentCountryCard(ContentComponent);
 
   useEffect(() => {
     getCountryList();
@@ -65,7 +67,7 @@ const Content = () => {
         {
           filteredCountryList.map((country) => (
             <Link key={country?.tld[0]} to={"/country/"+ country?.name?.common}>
-              <CountryCard data={country} />
+             { country.independent ? <IndependentComponent data={country} /> : <ContentComponent data={country} />}
             </Link>
           ))
         }
