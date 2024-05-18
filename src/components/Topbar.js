@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
-import { LOGO_URL, PROFILE_URL } from "../utils/constants";
+import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "./UserContext";
 
 const logo = <img className="h-12 w-12 rounded-full" src={LOGO_URL} alt="Google Logo" />;
 
 const TopbarComponent = () => {
   const [loginBtnName, setLoginBtnName] = useState("Login");
   const  onlineStatus  = useOnlineStatus();
+  const { name, avatar } = useContext(UserContext);
 
   return (
     <div className="flex justify-between bg-orange-400 p-2">
@@ -28,8 +30,10 @@ const TopbarComponent = () => {
             {loginBtnName}
           </button>
         </ul>
-        <div className="pl-5 flex">
-        <img className="h-10 w-10 rounded-full border-2 border-cyan-50" src={PROFILE_URL} alt="Profile" />
+
+        <span className="text-black flex pl-5">{name}</span>
+        <div className="pl-1 flex">
+        <img className="h-10 w-10 rounded-full border-2 border-cyan-50" src={avatar} alt="Profile" />
         <span className={`h-2 w-2 rounded-full absolute ${onlineStatus ? 'bg-green-600' : 'bg-red-600'}`}></span>
         </div>
       </div>

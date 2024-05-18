@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { countryUrl, unplashAccesskey, unplashAvatarUrl } from '../utils/constants';
 import CardLoader from './CardLoader';
 import ContentComponent from './CountryCard';
 import IndependentCountryCard from './IndependentCountryCard';
+import UserContext from "./UserContext";
 
 const Content = () => {
   const [countryList, setCountryList] = useState([]);
   const [filteredCountryList, setFilteredCountryList] = useState([]);
   const [searchText, setSearchText] = useState('');
   const IndependentComponent = IndependentCountryCard(ContentComponent);
+  const { name } = useContext(UserContext);
 
   useEffect(() => {
     getCountryList();
@@ -34,6 +36,7 @@ const Content = () => {
   // Conditional Rendering
   return countryList.length === 0 ? <CardLoader /> : (
     <div className="flex flex-col items-center mt-3">
+      <div className="text-xl m-3 font-bold">Hi 👋 , I'm {name}. This is my Pet project with React</div>
       <div className="flex">
         <input className="border border-black rounded-md mr-2 p-2 text-sm text-black" type="text" placeholder="Search by country name.." value={searchText} onChange={(e) => setSearchText(e.target.value)} />
         <button className="rounded-md border border-orange-950 p-1 bg-orange-800 text-white w-24"
