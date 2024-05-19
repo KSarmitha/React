@@ -39,7 +39,7 @@ const CountryDetails = () => {
                     </div>
 
                     <div className = { `${expandAcc ? 'block': 'hidden'} border-t-2 border-gray-800 mt-1` }>
-                       { borders.map((border, index) => (
+                       { borders?.map((border, index) => (
                             <span key={index} className='flex text-sm py-1'>{border}</span>
                        ))} 
                     </div>

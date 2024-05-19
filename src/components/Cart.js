@@ -1,17 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "../utils/cartSlice";
 
 const Cart = () => {
     const selector = useSelector((state) => state.cartState.cardItems);
     const dispatch = useDispatch();
     
-    const clearCart = () => {
+    const clear = () => {
         dispatch(clearCart());
     }
 
     return (
         <div className="flex items-center justify-center flex-col mb-3">
             <div className="text-xl font-bld my-3"> Selected Countries to vist </div>
-            <button onClick={ () => { clearCart() }}>Clear</button>
+            <button onClick={ () => { clear() }}>Clear</button>
            { selector.map((item, index) => (
                 <div key={index} className="border-b-2 border-blue-50 border-dotted p-4">
                 <div className='flex justify-between cursor-pointer'>
