@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
+import { addCountryToCard } from "../utils/cartSlice";
 import { countryUrl, unplashAccesskey, unplashAvatarUrl } from '../utils/constants';
 import CardLoader from './CardLoader';
 import ContentComponent from './CountryCard';
@@ -12,10 +14,15 @@ const Content = () => {
   const [searchText, setSearchText] = useState('');
   const IndependentComponent = IndependentCountryCard(ContentComponent);
   const { name } = useContext(UserContext);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getCountryList();
   }, [])
+
+  const addCountryToStore = (data) => {
+    dispatch(addCountryToCard(data));
+  }
 
   const getCountryList = async () => {
     const countryList = await fetch(countryUrl);
@@ -69,9 +76,14 @@ const Content = () => {
       <div className="flex flex-wrap p-5 items-center justify-center">
         {
           filteredCountryList.map((country) => (
-            <Link key={country?.tld[0]} to={"/country/"+ country?.name?.common}>
+            <div key={country?.tld[0]}>
+            <button className="p-1 border rounded-md" onClick={ () => {
+              addCountryToStore(country);
+            }}>Add + </button>
+            <Link to={"/country/"+ country?.name?.common}>
              { country.independent ? <IndependentComponent data={country} /> : <ContentComponent data={country} />}
             </Link>
+            </div>
           ))
         }
       </div>

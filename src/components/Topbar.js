@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -10,6 +11,7 @@ const TopbarComponent = () => {
   const [loginBtnName, setLoginBtnName] = useState("Login");
   const  onlineStatus  = useOnlineStatus();
   const { name, avatar } = useContext(UserContext);
+  const selector = useSelector((state) => state.cartState.cardItems);
 
   return (
     <div className="flex justify-between bg-orange-400 p-2">
@@ -20,6 +22,9 @@ const TopbarComponent = () => {
           <li className=" hover:underline hover:text-black"><Link to="/about"> About Us </Link></li>
           <li className=" hover:underline hover:text-black"><Link to="/contact"> Contact </Link></li>
           <li className=" hover:underline hover:text-black"><Link to="/hotels"> Hotels Reservation </Link></li>
+          <li className=" hover:underline hover:text-black bg-orange-900 rounded-full p-2"><Link to="/cart"> 🛒 
+          <span className="text-white">{selector?.length}</span>
+          </Link></li>
           <button className="rounded-md border border-orange-950 p-1 bg-orange-800 text-white w-24"
             onClick={() => {
               loginBtnName === "Login"
