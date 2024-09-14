@@ -1,0 +1,28 @@
+1) What are various ways to add images into our App? Explain with code examples
+    add images into public folder
+    using src tag
+    <img src="/my-image.jpg" alt="My Image" />
+
+    import myImage from './my-image.jpg'; // Import as a module
+    <img src={myImage} alt="My Image" />
+
+2) What would happen if we do console.log(useState())?
+    [undefined, f]
+    first argument as undefined, set function as function f()
+
+3) How will useEffect behave if we don't add a dependency array ?
+    If we don't added dependency array, useEffect will call and component will render for each state change.
+    if we added [] as dependecy array, it won't render the compoenent for each state change. only the first time will call
+    if added any state variable inside the dependecy array, useEffect will call and compoenent will render when that
+        state varaiable change and the first time
+
+4) What is SPA?
+    Single Page Application. For any route change only the related component will reload instead
+    of whole page. For example topbar, footer won't load for inside routing.
+    didn't make any network calls to load the page
+
+5) What is difference between Client Side Routing and Server Side Routing?
+    Client ide routing: Once user enter the url browser will get the page related to the 
+        url and loads the component.
+    Server side routing: User enter the url , it will make a network call to get the page and 
+        once receive the page will loads

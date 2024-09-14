@@ -1,0 +1,24 @@
+1) What is JSX ?
+    JSX is XML/HTML like synatx that is used by React to render the UI components. 
+    It is not a necessity to use JSX in React, but JSX makes it easier to write React elements. 
+
+    Common misconceptions of JSX 
+    * JSX is part of react – No, JSX is not a part of react, we can write react code without using JSX. We 
+    can develop react applications without using JSX. JSX makes developers life easy. 
+    * JSX is html inside JavaScript. No. JSX is html / XML like syntax.
+
+
+2) Superpowers of JSX?
+- JSX makes it easier to write React components.
+- Prevent from XSS attacks.
+- Prevent from injection attacks.
+- Can be write JS code inside JSX.
+
+3) {TitleComponent} vs {<TitleComponent/>} vs
+{<TitleComponent></TitleComponent>} in JSX
+
+{TitleComponent} - Render the ReactElement directly.
+    end of the react element is a JS function, so we can call as {TitleComponent()}
+{<TitleComponent/>} - Render the ReactComponent directly. (self closed)
+{<TitleComponent></TitleComponent>} - Render the ReactComponent directly.
+

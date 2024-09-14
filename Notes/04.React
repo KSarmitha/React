@@ -1,0 +1,96 @@
+1) Is JSX mandatory for React?
+    No, JSX and React are two different things, they are not same. JSX is introduced in react because, this 
+    made developer life easy which enabled writing html like syntax in JavaScript. It’s a syntactic sugar 
+    over pure react code
+
+2) Is ES6 mandatory for React?
+    No, without ES6 we can write react code using pure javascript.ES6 introduced some special features 
+    like spread operator, arrow function using which we can build our react application too.ES6 is 
+    recommended but not mandatory.
+
+3) How can I write comments in JSX?
+    single line comments within // and multiple comments /* */
+
+4) What is <React.Fragment></React.Fragment> and <></> ?
+    React.Fragment is a component exported by react library. React fragment groups a list of children 
+    without adding an extra div node to the DOM.
+    
+    return (
+        <div>
+            <header />
+            <footer />
+        </div>
+    )
+
+    this is same as : 
+    render (
+        <React.Fragment>
+            <header />
+            <footer />
+        </React.Fragment>
+    )
+
+    In our case react fragment is grouping header and 
+    footer elements and rendering them in DOM tree without any extra node.
+    Instead of React.Fragment we can also use a short hand syntax <></>
+    We can’t add styling to these empty angular braces.
+
+    Can I use React.Fragment inside another React.Fragment ?
+    yes. 
+    return (
+        <>
+            <h1></h1>
+            <>
+                <p></p>
+            </>
+        </>
+
+    )
+
+5) What is Virtual DOM?
+   Virtual DOM is a concept where we keep a representation of actual DOM with us. We need virtual 
+    DOM for reconciliation in REAC
+
+6) What is Reconciliation in React?
+    Reconciliation is a process through which react updates browser DOM
+    Reconciliation internally uses diffing algorithm to find out the difference between Actual DOM Tree
+    and Virtual DOM Tree and determines what needs to be updated in UI and it just updates the 
+    changed portion in the UI rather than updating the entire page. This makes react super-fast.
+
+7) What is React Fiber?
+    In older react versions (< 16), react was using Stack Reconciler Engine (SRE) for reconciliation. 
+    However, it had some drawbacks such as SRE is synchronous.
+    SRE works like a stack. SRE works synchronously until the stack is empty.
+    Let’s say we have an application, where we have a textbox in UI and the application is making API 
+    calls to fetch some data before we type anything in the textbox. Until we fetch the data, if we type 
+    anything, nothing will be printed. Once we get the data from the API then only we will be able to 
+    type something in the textbox. Meaning our app is behaving synchronously. To do both task in 
+    parallel asynchronous operation has to be performed.
+    To overcome such drawback after react version 16, React Fiber was introduced which uses updated 
+    react reconciler engine which is completely rewritten from the ground up and this engine performs 
+    asynchronous tasks.
+    Perks/Benefits -
+    * React Fiber focuses on Animations and responsiveness.
+    * Fiber makes react faster and smarter.
+    * Fiber splits work into chunks and prioritize tasks based on importance.
+    * Fiber resumes, pause and restarts rendering work on components as new updates come in.
+    * Fiber reuses previously completed work and even abort it if not needed
+
+8) Why we need keys in React? When do we need keys in React?
+    Keys are used in react to identify which items in the list are changed, updated or deleted. Keys are 
+    used to give an identity to the elements in the lists. react tracks elements by identifying their Key.
+    (React doc: When you don’t have stable IDs for rendered items, you may use the item index as a key as a last resort
+    We don’t recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state.)
+
+9) Can we use index as keys in React?
+    Yes, we can use the index as keys, but it is not considered because adding indexes as keys can result 
+    in incorrect rendering or unexpected behaviour, and can even lead to performance issues.
+    Keys > index > no keys(unacceptable
+
+10) What is props in React?
+    Props stands for properties. passing props to a component is same as passing arguments to a 
+    JavaScript function. whatever properties we pass into the component react wraps them up into a 
+    JavaScript object.
+
+11) What is a Config Driven UI ?
+    Which UI elements need to render has decided by the BE end point.

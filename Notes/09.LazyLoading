@@ -1,0 +1,30 @@
+1) When and why do we need lazy()?
+    When? load components dynamically, or lazily, only when thay are needed, specially useful for project which 
+    contains large number of components.
+    Why? Improve the Performance, load times, reduce the intial bundle size, better UX, reducing browser caching
+
+2) What is suspense?
+    declaratively manage asynchronous data fetching and code-splitting
+
+3) Why we got this error : A component suspended while responding to
+synchronous input. This will cause the UI to be replaced with a loading indicator.
+To fix, updates that suspend should be wrapped with startTransition? How does
+suspense fix this error?
+    they is a delay to get the compoennt once routed to the lazy loaded component.
+    Suspense gracefully solving this issue.
+    It will show the loading indicator until suspense componentload into the bundle
+
+4) Advantages and disadvantages of using this code splitting pattern?
+    Advantages: Minimize the initial bundle size
+                faster initial load time
+                improved Performance
+                Enhancing the caching
+                Optimized resouce usage
+    Disadvantage: asynchronous loading
+                Route based loading, you should implement it on a route/feature basis
+                Initial loading delay
+                Complex configuration
+
+5) When do we and why do we need suspense?
+    To wrap the component that need to load in the lazy loading
+    Help to manage synchronous operations, such as data fetching and code splitting 

@@ -1,0 +1,21 @@
+1) What is prop drilling?
+    Pass the prop from parent to its children , then form that children to its children 
+    basically , passing down props through multiple layers of nested components
+
+2) What is lifting the state up?
+    Pass the controll of state change to parent component.
+    moving the state from a lower-level(child-component) to a higher-component(parent or common ancestor)
+    in the component tree.
+
+3) What is Context Provider and Context Consumer?
+    Context API provides way to pass data through the component tree without having to pass manually at every level
+    Context provider:  to update the context value
+        its component that allows its children to subscribe to a context's changes.
+    Context Consumer: used to get the value from context
+        Allows component to access the context data without the need of prop drilling
+        <UserContext.Consumer>
+            {() => data.name}
+        </UserContext.Consumer>
+4) If you don’t pass a value to the provider does it take the default value?
+    if we context is a object it will throw the error , since not to be undefined
+    if its have only string, then it will use the default value if we didn't pass the value

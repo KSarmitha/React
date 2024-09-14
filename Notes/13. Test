@@ -1,0 +1,29 @@
+1) What are different types for testing?
+    Manual testing
+    Automatic testing - write test cases for testing functionality
+        its includes , 
+            Unit testing (write test cases for a spaecic part (isolated components)), 
+            integration testing (writing test cases for connected compoenents), 
+            end to end testing (test cases from the user enter to tha application until leaves the page)
+
+2) What is Enzyme?
+    Javascript testing utility for React.
+    allow 3 different way to render react compoennts in our test: 
+        - Shallow rendering
+        - Full DOM rendering
+        - Static rendering
+    Enzyme is dependent on React internals, so apart from the library itself, we need to install an Adapter 
+    that is compatible with the version of React in the project.
+
+3) Enzyme vs React Testing Library(RTL)
+    The React Testing Library is a very light-weight solution for testing React components. 
+    It provides light utility functions on top of react-dom and react-dom/test-utils, 
+    in a way that encourages better testing practices.
+
+    RTL provides only one way of rendering React components which is "render" - equivalent to Enzyme's "mount"
+
+    when a new version of React is released, there is no need to make any changes in the library source code.    
+
+4) What is Jest and why do we use it?
+    JS open-source testing framework, allows to write test cases
+    RTL uses Jest

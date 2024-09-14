@@ -1,0 +1,60 @@
+1) useContext vs Redux.
+    - both are used for state management
+    - useCotext built-in fetaure from React; Redux is an external library
+    - Redux will have a learning curve
+    useContext will be complex if project components count increase and data read and modify
+    between many components, Redux can used to overcome that issue
+    useContext can be utilized its features within the mid-level projects
+    Redux will help for complex projects
+
+2) Advantage of using Redux Toolkit over Redux
+    - No need to install more libraries [@redux/toolkit, react-redux is enough]
+    - less bilorplate code
+    - Setting up the redux store is easy
+    - built in dev tool support 
+    - Handles immutability for us by using Immer library internally
+    - 
+
+3) Explain Dispatcher.
+    Term used to refer a function called dispatch.
+    use it to send actions to the store
+    UserContext.dispatch(updateUserName())
+
+4) Explain Reducer
+    combination of reducers
+    simplifies the process of defining actions and the corresponding reducer logic
+    createSlice function is used to create reducers
+
+5) Explain slice.
+    Store is a big object , slice them into a pieces based our need. can be used one slice for cart data
+    another splice for user data
+    encapsulate the logic related to a specific part of the state
+
+6) Explain selector.
+    function extracts specific pieces of data from the store
+    compute derived data from the store
+
+7) Explain createSlice and the configuration it takes.
+    process of creating redux slices, redux slice is a piece of the redux store that 
+    includes a set of actions, a reducer and initial state
+
+    const mySlice = createSlice({
+        name: '',
+        initialState: {
+            items: []
+        },
+        reducers: {
+            addAction: () => {}
+            removeAction: () => {}
+        }
+    })
+
+    export const {addAction, removeAction} = mySlice.actions;
+    export default mySlice.reduce
+
+
+
+
+
+Note: Redux support asynchronous actions using middleware like redux-thunk or redux-saga.
+Redux toolkit has redux-query to make asynchronous operations

@@ -1,0 +1,38 @@
+1) How do you create Nested Routes react-router-dom cofiguration?
+    const appRoutes = createBrowserRouter([{
+        path: '',
+        element: '',
+        children: [
+            {
+                path: '',
+                element: '',
+            }
+        ]
+    }])
+
+2) Read abt createHashRouter, createMemoryRouter from React Router docs?
+    createHashRouter :This router is useful if you are unable to configure your web server to direct all traffic 
+    to your React Router application. Instead of using normal URLs, it will use the hash (#) 
+    portion of the URL to manage the "application URL".
+
+    createMemoryRouter : Instead of using the browsers history a memory router manages it's own history stack in memory. 
+    It's primarily useful for testing and component development 
+    tools like Storybook, but can also be used for running React Router in any non-browser environment.
+
+3) What is the order of life cycle method calls in Class Based Components
+    constructor()
+    render()
+    componentDidMount()
+
+4) Why do we use componentDidMount?
+    When render is called it will load with static data
+    after render called, componentDidMount will call, 
+    can call the apis inside the componentDidMount
+
+5) Why do we use componentWillUnmount? Show with example?
+    will call after component removed from the DOM.
+    can clear the setInterval() inside the componentWillUnmount
+
+6) (Research) Why do we use super(props) in constructor?
+
+7) (Research) Why can't we have the callback function of useEffect async?

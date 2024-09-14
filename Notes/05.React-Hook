@@ -1,0 +1,34 @@
+1) What is the difference between Named Export, Default export and * as export?
+    This is the default way of exporting a component in react. We can have only one default export per 
+    module. syntax is export default <componentName>
+
+    Exporting a component in react using named export. We use an export key word before exporting a 
+    component from a module. We are exporting Footer component from Footer.js module
+    export const Footer = () => {return ()}
+    
+    import { URL, env } from './constants';
+    {URL}
+
+    this is same as:
+     import * as constant from './constants';
+
+     {constant.URL}
+
+2) What is the importance of config.js file?
+    Maintain all the constant varaibale, utils at one place. ie, commonaly used things acroos all the coponents at one place
+    We create a config file or constant file in our application to store hard coded information. Config file 
+    data are named exported data.
+
+3) What are React Hooks? 
+    A normal JavaScript function written by Facebook developers which gives us some functionalities. 
+    There are different types of hooks.
+    useState()
+    useEffect()
+
+4) Why do we need a useState Hook?
+    if we want to re-render the DOM when the value change for the variable
+    * useState hook is a hook that react provides to create state variables in a functional component.
+    * useState hook returns an array of which first element is Name of the variable, second element is a 
+    setter function that changes the variable.
+    * UseState function expects an argument which initialises the variable.
+

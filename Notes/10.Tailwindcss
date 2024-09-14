@@ -1,0 +1,26 @@
+1) Explore all the ways of writing css.
+    - Normal css. creating class and use'em into JSX (internal,external)
+    - styled Components
+    - By using Libraries/Frameworks
+
+2) How do we configure tailwind?
+    install the taiwindss, postcssrc
+    intiate the tailwindcss
+    add content into tailwind.congif.js
+    create postcssrc 
+    import tailwind css into index.css
+    build the project and start the server
+
+3) In tailwind.config.js, what does all the keys mean (content, theme, extend,
+plugins)?
+    content: specify the file where tailwindcss should analyze to generate its utility classes 
+    theme: theme support(dark/light).default styles & configuration for various aspects of tailwind css
+    extend: override the default configuration provided by tailwind css
+    plugins: add any plugings needed like tailwind-animation / tailwind-forms
+
+4) Why do we have .postcssrc file?
+    post css is a tool used by tailwind css
+    post css transform the tailwind utitlies written inside the JSX into css
+    and it is commonly used in conjunction with build tools like webpack or parcel for
+    processing and optimizing CSS.
+

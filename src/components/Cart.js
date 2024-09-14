@@ -14,7 +14,7 @@ const Cart = () => {
             <div className="text-xl font-bld my-3"> Selected Countries to vist </div>
             <button onClick={ () => { clear() }}>Clear</button>
            { selector.map((item, index) => (
-                <div key={index} className="border-b-2 border-blue-50 border-dotted p-4">
+                <div data-testid="countryList" key={index} className="border-b-2 border-blue-50 border-dotted p-4">
                 <div className='flex justify-between cursor-pointer'>
                     <div className='font-bold'> {item?.name?.common} </div>
                 </div>

@@ -1,0 +1,51 @@
+1) What is 'NPM'? 
+    Its managing the JS packages. 
+
+2) What is `Parcel/Webpack`? Why do we need it?
+    They are bundlers. Used to bundle our code and hosted into a server and helped to run our application in local
+
+3) What is `.parcel-cache'?
+    parcel do caching our code and out it into the parcel-cache and helped to fast building
+
+4) What is `npx` ?
+    Used to execute the npm packages
+
+5) What is difference between `dependencies` vs `devDependencies`?
+    devDependencies only installed in dev environment, no needed to import in production
+    dependencies needed to install in dev and production
+
+6) What is Tree Shaking?
+    Removed the unused methods and codes from the production bundle
+
+7) What is Hot Module Replacement?
+    Auto reload the page once build is complete
+
+8) List down your favourite 5 superpowers of Parcel and describe any 3 of them in your
+    own words?
+        HMR
+        Tree Shaking
+        different build for dev and production
+        Minification, compression 
+        local server
+
+9) What is `.gitignore`? What should we add and not add into it?
+    include the files which are not pushed to git. Add node modules, dish folder and parcel-cache
+    not include package-lock.json and package.json. both should pushed to git.
+
+10) - What is the difference between `package.json` and `package-lock.json`?
+    package.json has the exact version of package installed in our application. 
+    package-lock.json file has the current version which is using in the application
+
+11) Why should I not modify `package-lock.json`?
+    it will take the latest patch/minor stable version from the package.
+
+12) What is `node_modules` ? Is it a good idea to push that on git?
+    node_modules includes all the depencies and transitive depencies installed in our project
+    no need to push it to git
+
+13) What is the `dist` folder?
+    bundle of application, minified, compressed code. ready to production
+
+14) What is `browserlists'?
+    added into package.json .for which browers version should be support our application
+
